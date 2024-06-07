@@ -22,10 +22,13 @@ x = np.array(x).reshape(-1, 1)
 modelo = LinearRegression()
 modelo.fit(x,y)
 
+# coeficiente angular e linear
 coef_angular = modelo.coef_
 coef_linear = modelo.intercept_
 
-# y = a+bx -> gerando a reta da regressao linear
+# y = a + bx -> gerando a reta da regressao linear
 plt.scatter(x, y)
 plt.plot(x, coef_linear + coef_angular*x, color='red')
+plt.xlabel('Cilindrada')
+plt.ylabel('Aceleracao')
 plt.show()
